@@ -81,11 +81,6 @@ After significance testing, only a few eigenvectors remained for each neuron. Th
 
 \paragraph{Excitatory and suppressive features}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=1.0\linewidth]{Figures/Figure1.eps}
-  \caption{The distribution of the number of significant, excitatory, and suppressive features computed through the convolutional model. (A) The total number of significant dimensions of J. (B) The number of significant dimensions with positive eigenvalues. (C) The number of significant dimensions with negative eigenvalues. (D) Average number of excitatory and suppressive features for each region in auditory cortex.}
-\end{figure}
 
 \section{Linear combination of gammatones}
 \paragraph{Methods}
@@ -94,12 +89,25 @@ $$ where $a$ controls the amplitude, $t_0$ controls the onset time, $n$ controls
 
 With a set of gammatones we can approximate $\mathbf{J}$ as $$\mathbf{J'} = \sum_{i}{SS^T}.$$ We ignore any weights as the $S$ matrices are normalized when performing the fit. We choose to fit the onset time, filter order and decay rate of the gammatone, as well as the central frequency and standard deviation of the gaussian using differential evolution. All other paramaters are either redundant because normalization is performed ($a$) or irrelevant to the problem we are interested in ($\phi$).  We seek to minimize the mean difference between $\mathbf{J}$ as computed using the quadratic model and the new $\mathbf{J'}$. The excitatory and suppressive parts of $\mathbf{J}$ were fit seperately and only the significant eigenvectors are taken into consideration. The exact approach we took to solve the differential evolution problem can be read about in %%cite ryans paper.
 
+
+
 \paragraph{Results}
 
 \paragraph{Analysis of different auditory regions}
 \paragraph{Cross-order suppression}
 \paragraph{Quadrature pairs}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=1.0\linewidth]{Figures/Figure1.eps}
+  \caption{The distribution of the number of significant, excitatory, and suppressive features computed through the convolutional model. (A) The total number of significant dimensions of J. (B) The number of significant dimensions with positive eigenvalues. (C) The number of significant dimensions with negative eigenvalues. (D) Average number of excitatory and suppressive features for each region in auditory cortex.}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=1.0\linewidth]{Figures/Figure2.eps}
+  \caption{Example auditory receptive field with 3 suppressive features. The neuron is $glb5656_2$ in the ovoidalis. (A) Receptive fields computed from the quadratic model. There are 3 significant dimensions for this neuron and they are all suppressive (eigenvalues listed above the receptive field. (B) Gammatones fit to the receptive fields above. Parameters were selected manually to illustrate the process of fitting a linear combination of gammatones to the J matrix.}
+\end{figure}
 
 \section{Discussion}
 
